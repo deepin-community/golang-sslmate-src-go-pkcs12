@@ -1,5 +1,28 @@
-template-repository (1.0-1) unstable; urgency=medium
+golang-sslmate-src-go-pkcs12 (0.2.0-1) unstable; urgency=medium
 
-  * Initial release
+  * Team upload.
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+  [ Aloïs Micard ]
+  * New upstream version.
+  * Update d/watch to use tagged release.
+
+  [ Anthony Fok ]
+  * Refresh debian/watch, changing "age" to "@PACKAGE@"
+  * Reorder fields in debian/control and debian/copyright
+  * Use dh-sequence-golang instead of dh-golang and --with=golang
+  * Bump Standards-Version to 4.6.2 (no change)
+
+ -- Anthony Fok <foka@debian.org>  Sun, 18 Jun 2023 01:25:19 -0600
+
+golang-sslmate-src-go-pkcs12 (0.0~git20210415.c5206de-2) unstable; urgency=medium
+
+  * Team upload.
+    + Source-only upload for testing migration.
+
+ -- Nilesh Patra <nilesh@debian.org>  Fri, 19 Nov 2021 02:33:56 +0530
+
+golang-sslmate-src-go-pkcs12 (0.0~git20210415.c5206de-1) unstable; urgency=medium
+
+  * Initial release (Closes: #953972)
+
+ -- Aloïs Micard <creekorful@debian.org>  Mon, 08 Nov 2021 16:13:52 +0100

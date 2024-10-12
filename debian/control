@@ -1,15 +1,33 @@
-Source: template-repository
-Section: unknown
+Source: golang-sslmate-src-go-pkcs12
+Section: golang
 Priority: optional
-Maintainer: Tsic404 <liuheng@deepin.org>
-Build-Depends: debhelper (>= 11)
-Standards-Version: 4.1.3
-Homepage: https://github.com/deepin-community/template-repository
-#Vcs-Browser: https://salsa.debian.org/debian/deepin-community-template-repository
-#Vcs-Git: https://salsa.debian.org/debian/deepin-community-template-repository.git
+Maintainer: Debian Go Packaging Team <team+pkg-go@tracker.debian.org>
+Uploaders: Aloïs Micard <creekorful@debian.org>,
+           Peymaneh Nejad <p.nejad@posteo.de>
+Rules-Requires-Root: no
+Build-Depends: debhelper-compat (= 13),
+               dh-sequence-golang,
+               golang-any,
+               golang-golang-x-crypto-dev
+Testsuite: autopkgtest-pkg-go
+Standards-Version: 4.6.2
+Vcs-Browser: https://salsa.debian.org/go-team/packages/golang-sslmate-src-go-pkcs12
+Vcs-Git: https://salsa.debian.org/go-team/packages/golang-sslmate-src-go-pkcs12.git
+Homepage: https://github.com/SSLMate/go-pkcs12
+XS-Go-Import-Path: software.sslmate.com/src/go-pkcs12
 
-Package: template-repository
-Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Package: golang-sslmate-src-go-pkcs12-dev
+Architecture: all
+Multi-Arch: foreign
+Depends: golang-golang-x-crypto-dev,
+         ${misc:Depends}
+Description: Go library for encoding and decoding PKCS#12 files (library)
+ This package implements some of PKCS#12 (also known as P12 or PFX). It
+ is intended for decoding DER-encoded P12/PFX files for use with the
+ crypto/tls package, and for encoding P12/PFX files for use by legacy
+ applications which do not support newer formats.  Since PKCS#12 uses
+ weak encryption primitives, it SHOULD NOT be used for new applications.
+ .
+ Note that only DER-encoded PKCS#12 files are supported, even though
+ PKCS#12 allows BER encoding.  This is because encoding/asn1 only
+ supports DER.
